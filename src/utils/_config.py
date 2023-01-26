@@ -81,9 +81,9 @@ class Config(object):
                 f"Inappropriate value for Horizon: {self.params['horizon']}"
             )
 
-        self.params['frequency'] = params_all['target']['frequency']
+        #self.params['frequency'] = params_all['target']['frequency']
         self.params['filter_column'] = int(params_all['target']['filter_column'])
-        self.params['target'] = params_all['target']['abbr']
+        # self.params['target'] = params_all['target']['abbr']
         self.params['target_name'] = params_all['target']['abbr']
         self.params['target_display_name'] = "Historical " + params_all['target']['displayName']
         self.params['features'] = params_all['features']
