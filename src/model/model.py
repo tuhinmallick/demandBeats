@@ -31,7 +31,7 @@ class nbeats_model():
     ####
     ############################################################################################################################################
     def data_preprocess(self, df, target_name):
-        """ This function is to preprocess the dataset, including cleaning null, filling the missing data and transform the formt of dataset into Time Series type. 
+        """ This function is to preprocess the dataset, including cleaning null, filling the missing data and transform the type of dataset into Time Series type. 
         The function also splits the dataset into two datasets, df_target and df_covariates. If the dataset is univariate series, df_covariates will be an empty DataFrame. If the dataset is multivariate series, df_covariates will be TimeSeries and series of covariate series. 
 
         Args:
