@@ -218,29 +218,23 @@ class nbeats_model():
         Output_chunk_length = 1
         Generic_architecture = True
 
-        
-        # model = model.reset_model()        # Resets the model object and removes all stored data - model, checkpoints, loggers and training history. 
-
-
         # uses the tunned parameters from Grid Search 
         model = NBEATSModel(input_chunk_length = Input_chunk_length, output_chunk_length = Output_chunk_length, generic_architecture = Generic_architecture)  
         if isinstance(df_covariates, TimeSeries):
             # for covariates, output_chunk_lenghth has to be greater than forecast horizon
             if Output_chunk_length < self.horizon:
                 Output_chunk_length = self.horizon
-                model = model.reset_model()
+                model = model.reset_model()             # Resets the model object and removes all stored data - model, checkpoints, loggers and training history. 
                 model = NBEATSModel(input_chunk_length = Input_chunk_length, output_chunk_length = Output_chunk_length, generic_architecture = Generic_architecture)  
             model.fit(series=df_target_scaled, past_covariates=df_covariates_scaled)   # multivariate      
             pred = model.predict(n=self.horizon, series=df_target_scaled, past_covariates=df_covariates_scaled)
         else: 
             model.fit(df_target_scaled)       # univariate
-            pred = model.predict(n=self.horizon, series=df_target_scaled)
-        
+            pred = model.predict(n=self.horizon, series=df_target_scaled)  
 
         pred = scaler_target.inverse_transform(pred)
         pred_df = pred.pd_dataframe()
         pred_df.columns = ['forecast']
-
 
 
         # ###############################################
@@ -256,7 +250,6 @@ class nbeats_model():
         
 
         forecast_df = pd.concat([last_row, pred_df])
-
 
 
 
