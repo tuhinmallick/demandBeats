@@ -31,13 +31,10 @@ class Config(object):
         else:
             self.params['forecast_path'] = params_all['paths']['forecastResultPath']
 
-        self.params['model_path'] = params_all['paths']['modelPath']
-        self.params['input_path'] = pathlib.Path(params_all['paths']['combinedDataPath'])
+        self.params['input_path'] = pathlib.Path(params_all['paths']['dataPath'])
         
         self.params['data_path'] = self.params["input_path"] / f"{params_all['target']['abbr']}.csv"
         self.params['backtesting_path'] = params_all['paths']['backtestingPath']
-        self.params['simulation_path'] = params_all['paths']['simulationPath']
-        self.params['combined_data_path'] = params_all['paths']['combinedDataPath']
         self.params['horizon'] = int(params_all['model']['kwargs']['horizon']) if 'horizon' in params_all['model'][
             'kwargs'].keys() else 3
 
@@ -49,12 +46,11 @@ class Config(object):
                 f"Inappropriate value for Horizon: {self.params['horizon']}"
             )
 
-        #self.params['frequency'] = params_all['target']['frequency']
+        self.params['frequency'] = params_all['target']['frequency']
         self.params['filter_column'] = int(params_all['target']['filter_column'])
-        # self.params['target'] = params_all['target']['abbr']
+        self.params['target'] = params_all['target']['abbr']
         self.params['target_name'] = params_all['target']['abbr']
         self.params['target_display_name'] = "Historical " + params_all['target']['displayName']
         self.params['features'] = params_all['features']
-        self.params['unit'] = params_all['target']['unit']
 
         return self.params

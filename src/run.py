@@ -38,14 +38,14 @@ def main():
 
     # The input file is saved with the name of the target the date column
     # The date column is standardize with the name Date
-    data_path = os.path.join(params['combined_data_path'],params['target']+'.csv')
-    if params["frequency"] == 'B':
-        df = pd.read_csv(data_path)
-        df['Date'] = pd.to_datetime(df["Date"], format='%d/%m/%Y')
-        df = df.set_index(['Date'])
-        df = df.reindex(df.index, fill_value=0)
-    else:
-        df = pd.read_csv(data_path, index_col=0, parse_dates=True)
+    data_path = os.path.join(params['data_path'],params['target']+'.csv')
+    # if params["frequency"] == 'B':
+    #     df = pd.read_csv(data_path)
+    #     df['Date'] = pd.to_datetime(df["Date"], format='%d/%m/%Y')
+    #     df = df.set_index(['Date'])
+    #     df = df.reindex(df.index, fill_value=0)
+    # else:
+    df = pd.read_csv(data_path, index_col=0)
 
 
     # --->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

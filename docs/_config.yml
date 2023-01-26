@@ -16,6 +16,8 @@ html:
     baseurl: https://worldbank.github.io/template
 
 only_build_toc_files: true
+features:
+
 
 model:
   kwargs:
@@ -28,7 +30,7 @@ paths:
   rootPath: data/
   backtestingPath: data/backtest
 target:
-  abbr: Platinum_spot_price
-  displayName: Platinum
+  abbr: Store
+  displayName: Store
   filter_column: 12
-  frequency: MS
+  frequency: D
