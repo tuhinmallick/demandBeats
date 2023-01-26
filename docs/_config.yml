@@ -16,3 +16,19 @@ html:
     baseurl: https://worldbank.github.io/template
 
 only_build_toc_files: true
+
+model:
+  kwargs:
+    horizon: 3
+  name: Nbeats
+paths:
+  dataPath: data/target
+  driversPath: data/driver
+  forecastResultPath: data/forecast
+  rootPath: data/
+  backtestingPath: data/backtest
+target:
+  abbr: Platinum_spot_price
+  displayName: Platinum
+  filter_column: 12
+  frequency: MS

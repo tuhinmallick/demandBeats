@@ -12,7 +12,7 @@ script_path = pathlib.Path(__file__).parent
 
 
 from utils import _logger as logger
-from utils import _config
+from utils._config import Config
 
 # another py file
 from model import model_deploy
@@ -50,7 +50,7 @@ def main():
 
     # --->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     # Generate the dataframes by calling the main() function.
-    actual, forecast, feature_importance, backtesting = main_deploy.General(df, params)
+    actual, forecast, feature_importance, backtesting = model_deploy.General(df, params)
     print('Forecasting Done')
 
 

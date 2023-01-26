@@ -6,17 +6,14 @@ from darts.dataprocessing.transformers import Scaler
 
 from sklearn import preprocessing
 import lightgbm as lgb
-# from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 
 from darts.dataprocessing.transformers import (
     Scaler,
-    # MissingValuesFiller,
 )
 from sklearn.preprocessing import MinMaxScaler
 import warnings
 warnings.filterwarnings('ignore')
 
-# from sklearn.metrics import mean_absolute_percentage_error
 
 class nbeats_model():
 
