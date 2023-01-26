@@ -76,7 +76,7 @@ class WorldBankIndicatorsAPI:
         if isinstance(country, list):
             country = ";".join([self._get_country_code(c) for c in country])
 
-        params.update({"format": "json", "per_page": 1000})
+        params |= {"format": "json", "per_page": 1000}
 
         response = self._get(indicator, country, params)
         data = response.json()[-1]
