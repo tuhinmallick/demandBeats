@@ -68,7 +68,7 @@ If you have a road map, goals, works in progress, or a development philosophy, m
 
 ## Reporting Bugs
 
-**If you find a security vulnerability, do NOT open an issue. Email EMAIL@DOMAIN.COM instead.**
+**If you find a security vulnerability, do NOT open an issue. Email tuhin.mllk@gmail.com instead.**
 
 Ask contributors to check before filing a new issue. Also, provide any references to FAQs or debugging guides that you might have.
 
